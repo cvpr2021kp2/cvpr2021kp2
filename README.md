@@ -1,16 +1,37 @@
-### Hi there 👋
+# Fast and Memory-Efficient Compact Bilinear Pooling
+## Prepare datasets
+### Dataset
+CUB [link](https://www.dropbox.com/s/dsgngcy3fmamgm7/cub200.tar.gz?dl=0)
 
-<!--
-**cvpr2021kp2/cvpr2021kp2** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
+MIT [link](https://www.dropbox.com/s/n6ymftqk8alihpu/mit.tar.gz?dl=0)
 
-Here are some ideas to get you started:
+DTD [link](https://www.dropbox.com/s/co5lq11axokwkcj/dtd.tar.gz?dl=0)
 
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
--->
+please unzip the downloaded datasets and then move them to data
+
+
+## Training
+
+Step 1. Fine-tune the fc layer only.
+
+CUDA_VISIBLE_DEVICES=0,1 python ./src/bilinear_cnn_fc_cub.py --base_lr 1 --batch_size 64 --epochs 81 --weight_decay 1e-6
+    
+Step 2. Fine-tune all layers.
+
+CUDA_VISIBLE_DEVICES=0,1 python ./src/bilinear_cnn_all_cub.py --base_lr 1e-2 --batch_size 32 --epochs 50 --weight_decay 1e-3 --model "vgg_16_epoch_81.pth"
+
+
+
+## Run Script
+
+
+You can also run the above three experiments by one script in background:
+
+    CUB:
+    nohup bash script_cub.sh &
+
+    MIT:
+    nohup bash script_mit.sh &
+
+    DTD:
+    nohup bash script_dtd.sh &
