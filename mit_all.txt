@@ -1,0 +1,109 @@
+Prepare the network and data.
+DataParallel(
+  (module): BCNN(
+    (features): Sequential(
+      (0): Conv2d(3, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+      (1): ReLU(inplace=True)
+      (2): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+      (3): ReLU(inplace=True)
+      (4): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)
+      (5): Conv2d(64, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+      (6): ReLU(inplace=True)
+      (7): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+      (8): ReLU(inplace=True)
+      (9): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)
+      (10): Conv2d(128, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+      (11): ReLU(inplace=True)
+      (12): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+      (13): ReLU(inplace=True)
+      (14): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+      (15): ReLU(inplace=True)
+      (16): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)
+      (17): Conv2d(256, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+      (18): ReLU(inplace=True)
+      (19): Conv2d(512, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+      (20): ReLU(inplace=True)
+      (21): Conv2d(512, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+      (22): ReLU(inplace=True)
+      (23): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)
+      (24): Conv2d(512, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+      (25): ReLU(inplace=True)
+      (26): Conv2d(512, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+      (27): ReLU(inplace=True)
+      (28): Conv2d(512, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+      (29): ReLU(inplace=True)
+    )
+    (fc): Linear(in_features=9216, out_features=67, bias=True)
+    (norm): runLayer()
+  )
+)
+=> loading annotations from: TrainImagesnew.txt ...
+=> loading annotations from: TestImagesnew.txt ...
+Training.
+Epoch	Train loss	Train acc	Test acc
+*1	0.989		74.00%		64.70%
+*2	0.658		84.00%		67.54%
+*3	0.450		91.00%		72.99%
+*4	0.325		95.00%		73.96%
+*5	0.211		98.00%		75.60%
+*6	0.151		99.00%		76.72%
+*7	0.124		99.00%		79.33%
+8	0.097		99.00%		78.21%
+9	0.085		99.00%		77.91%
+*10	0.070		99.00%		79.40%
+11	0.068		99.00%		78.43%
+12	0.066		99.00%		78.36%
+13	0.059		99.00%		78.73%
+14	0.057		99.00%		78.81%
+*15	0.057		99.00%		79.48%
+*16	0.055		99.00%		79.70%
+17	0.055		99.00%		78.43%
+18	0.061		99.00%		79.40%
+19	0.056		99.00%		78.88%
+20	0.057		99.00%		79.63%
+21	0.054		99.00%		78.88%
+22	0.053		99.00%		78.06%
+23	0.059		99.00%		77.24%
+Epoch    24: reducing learning rate of group 0 to 1.0000e-03.
+24	0.064		99.00%		78.58%
+*25	0.044		99.00%		79.85%
+26	0.041		99.00%		79.03%
+27	0.041		99.00%		79.18%
+28	0.039		99.00%		78.66%
+29	0.039		99.00%		79.25%
+30	0.039		99.00%		79.10%
+31	0.039		99.00%		79.33%
+32	0.039		99.00%		78.73%
+Epoch    33: reducing learning rate of group 0 to 1.0000e-04.
+33	0.040		99.00%		78.88%
+34	0.038		99.00%		78.96%
+35	0.038		99.00%		78.96%
+36	0.038		99.00%		78.96%
+37	0.038		99.00%		78.96%
+38	0.038		99.00%		78.96%
+39	0.039		99.00%		78.73%
+40	0.038		99.00%		78.96%
+Epoch    41: reducing learning rate of group 0 to 1.0000e-05.
+41	0.038		99.00%		79.03%
+42	0.037		99.00%		79.03%
+43	0.038		99.00%		79.03%
+44	0.038		99.00%		79.03%
+45	0.038		99.00%		79.03%
+46	0.037		99.00%		79.03%
+47	0.038		99.00%		78.96%
+48	0.038		99.00%		78.96%
+Epoch    49: reducing learning rate of group 0 to 1.0000e-06.
+49	0.038		99.00%		78.96%
+50	0.038		99.00%		78.96%
+51	0.038		99.00%		78.88%
+52	0.038		99.00%		78.88%
+53	0.037		99.00%		78.96%
+54	0.037		99.00%		78.96%
+55	0.038		99.00%		78.88%
+56	0.038		99.00%		78.88%
+Epoch    57: reducing learning rate of group 0 to 1.0000e-07.
+57	0.038		99.00%		78.96%
+58	0.038		99.00%		78.88%
+59	0.038		99.00%		78.88%
+60	0.038		99.00%		78.88%
+Best at epoch 25, test accuaray 79.850746
