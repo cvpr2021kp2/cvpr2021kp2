@@ -1,4 +1,8 @@
 # Fast and Memory-Efficient Compact Bilinear Pooling
+## README
+For a better use experience, we recommend you to directly use github repository
+github [link](https://github.com/cvpr2021kp2/cvpr2021kp2)
+
 ## Prepare datasets
 ### Dataset
 CUB [link](https://www.dropbox.com/s/dsgngcy3fmamgm7/cub200.tar.gz?dl=0)
