@@ -1,6 +1,6 @@
 # Fast and Memory-Efficient Compact Bilinear Pooling
 ## README
-For a better use experience, we recommend you to directly use github repository
+For a better user experience, we recommend you to directly use github repository
 github [link](https://github.com/cvpr2021kp2/cvpr2021kp2)
 
 ## Prepare datasets
